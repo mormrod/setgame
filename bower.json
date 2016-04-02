@@ -1,0 +1,21 @@
+{
+  "name": "set-game",
+  "description": "",
+  "main": "index.js",
+  "author": "Matt Ormrod <matt@mattormrod.co.uk>",
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2"
+  }
+}
