@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "author": "Matt Ormrod <matt@mattormrod.co.uk>",
-  "license": "ISC",
+  "license": "MIT",
   "moduleType": [
     "node"
   ],
