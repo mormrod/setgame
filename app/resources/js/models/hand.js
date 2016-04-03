@@ -1,3 +1,5 @@
+var error = require('./error');
+
 var hand = (function() {
 
     var collection = [];
@@ -66,12 +68,24 @@ var hand = (function() {
             numberMatches++;
         }
 
+        if (numberMatches === 0) {
+
+            error.add("Numbers are not all the same or all different");
+
+        }
+
         if (collection[0].colour == collection[1].colour && collection[1].colour == collection[2].colour && collection[0].colour == collection[2].colour) {
             colourMatches++;
         }
 
         if (collection[0].colour != collection[1].colour && collection[1].colour != collection[2].colour && collection[0].colour != collection[2].colour) {
             colourMatches++;
+        }
+
+        if (colourMatches === 0) {
+
+            error.add("Colours are not all the same or all different");
+
         }
 
         if (collection[0].style == collection[1].style && collection[1].style == collection[2].style && collection[0].style == collection[2].style) {
@@ -82,12 +96,24 @@ var hand = (function() {
             styleMatches++;
         }
 
+        if (styleMatches === 0) {
+
+            error.add("Styles are not all the same or all different");
+
+        }
+
         if (collection[0].shape == collection[1].shape && collection[1].shape == collection[2].shape && collection[0].shape == collection[2].shape) {
             shapeMatches++;
         }
 
         if (collection[0].shape != collection[1].shape && collection[1].shape != collection[2].shape && collection[0].shape != collection[2].shape) {
             shapeMatches++;
+        }
+
+        if (shapeMatches === 0) {
+
+            error.add("Shapes are not all the same or all different");
+
         }
 
         if (numberMatches > 0 && colourMatches > 0 && styleMatches > 0 && shapeMatches > 0) {
