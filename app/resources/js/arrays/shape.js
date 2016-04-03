@@ -1,7 +1,9 @@
 // List of possible card shapes
 var shape = [
-    "plus",
-    "minus"
+    "heart",
+    "paper-plane",
+    "trash",
+    "plus-square"
 ];
 
 module.exports = shape;

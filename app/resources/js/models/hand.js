@@ -36,18 +36,27 @@ var hand = (function() {
 
     }
 
+    /**
+     *  Return the collection
+     * @returns {Array}
+     */
     function returnCollection() {
 
         return collection;
 
     }
 
+    /**
+     *  Check if the selected hand is a set or not
+     * @returns {boolean}
+     */
     function checkHand() {
 
         var numberMatches = 0;
         var colourMatches = 0;
-        var styleMatches = 1;
+        var styleMatches = 0;
         var shapeMatches = 0;
+        var removeFromScreen = false;
 
         if (collection[0].number == collection[1].number && collection[1].number == collection[2].number && collection[0].number == collection[2].number) {
             numberMatches++;
@@ -65,13 +74,13 @@ var hand = (function() {
             colourMatches++;
         }
 
-        //if (collection[0].style == collection[1].style && collection[1].style == collection[2].style && collection[0].style == collection[2].style) {
-        //    styleMatches++;
-        //}
-        //
-        //if (collection[0].style != collection[1].style && collection[1].style != collection[2].style && collection[0].style != collection[2].style) {
-        //    styleMatches++;
-        //}
+        if (collection[0].style == collection[1].style && collection[1].style == collection[2].style && collection[0].style == collection[2].style) {
+            styleMatches++;
+        }
+
+        if (collection[0].style != collection[1].style && collection[1].style != collection[2].style && collection[0].style != collection[2].style) {
+            styleMatches++;
+        }
 
         if (collection[0].shape == collection[1].shape && collection[1].shape == collection[2].shape && collection[0].shape == collection[2].shape) {
             shapeMatches++;
@@ -82,12 +91,12 @@ var hand = (function() {
         }
 
         if (numberMatches > 0 && colourMatches > 0 && styleMatches > 0 && shapeMatches > 0) {
-            console.log(true);
-        } else {
-            console.log(false);
+            removeFromScreen = true;
         }
 
         resetHand();
+
+        return removeFromScreen;
 
     }
 

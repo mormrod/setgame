@@ -1,8 +1,7 @@
 // List of possible background styles
 var style = [
-    "outline",
-    "hatched",
-    "block"
+    "-o",
+    ""
 ];
 
 module.exports = style;

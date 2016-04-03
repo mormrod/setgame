@@ -8,6 +8,7 @@ var path = {
     node:   './node_modules/',
     css:    './app/resources/css/',
     js:     './app/resources/js/',
+    images:     './app/resources/images/',
     destination: './public/'
 };
 
@@ -25,6 +26,9 @@ elixir(function(mix) {
 
     // Copy the fonts
     mix.copy(path.node + 'font-awesome/fonts/', path.destination + 'fonts/');
+
+    // Copy the images
+    mix.copy(path.images, path.destination + 'images/');
 
     // Compile the Sass file to the public folder
     mix.sass(path.css + 'main.scss', path.destination + 'css/main.css');

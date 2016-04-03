@@ -1,30 +1,63 @@
 @import './node_modules/font-awesome/scss/font-awesome.scss';
 
+body {
+
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: arial, sans-serif;
+  color: #FFF;
+}
 
 .card {
 
-  width: 200px;
-  height: 400px;
-  margin: 10px;
-  border: 1px solid #424242;
-  font-size: 60px;
+  width: 100px;
+  height: 140px;
+  background: #FFF;
+  border-radius: 7px;
+  margin: 5px;
+  -webkit-box-shadow: 8px 10px 17px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 8px 10px 17px -8px rgba(0,0,0,0.75);
+  box-shadow: 8px 10px 17px -8px rgba(0,0,0,0.75);
+  font-size: 30px;
   float: left;
+  cursor: pointer;
 
   &.red {
-    color: #FF0000;
+    color: #b80000;
 
   }
 
   &.blue {
-    color: #0000FF;
+    color: #0000b3;
 
   }
 
   &.green {
-    color: #00FF00;
+    color: #008b00;
 
   }
 
+  &.selected {
+    background: #FFFFAA;
+  }
 
+  table {
+    width: 100%;
+    height: 140px;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+
+    td {
+      vertical-align: middle;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+  }
 
 }
