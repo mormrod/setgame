@@ -2,7 +2,6 @@
 var deck = require('./models/deck');
 var hand = require('./models/hand');
 
-var $card = $(".card");
 var $body = $("body");
 
 
