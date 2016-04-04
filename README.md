@@ -32,4 +32,4 @@ The basic rules are:
 
 ## Changelog
 
-* 1.0 - Created and committed initial working version of the application
+* 1.0.0 - Created and committed initial working version of the application
