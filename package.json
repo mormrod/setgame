@@ -19,7 +19,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "author": "Matt Ormrod <matt@mattormrod.co.uk>",
   "license": "MIT"
