@@ -1,13 +1,12 @@
 {
-  "name": "set-game",
-  "description": "",
-  "main": "index.js",
+  "name": "setgame",
+  "description": "JavaScript and HTML game",
   "author": "Matt Ormrod <matt@mattormrod.co.uk>",
   "license": "MIT",
   "moduleType": [
     "node"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/mormrod/setgame",
   "ignore": [
     "**/.*",
     "node_modules",
