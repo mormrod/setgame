@@ -1,6 +1,6 @@
 // Load in the dependancies
 var elixir = require('laravel-elixir');
-//var browsersync = require('laravel-elixir-browsersync2');
+var browsersync = require('laravel-elixir-browsersync2');
 
 // Setup the paths
 var path = {
