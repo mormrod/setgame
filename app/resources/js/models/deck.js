@@ -29,6 +29,8 @@ var deck = (function(_) {
      */
     function initialiseDeck(numberOfCards) {
 
+        collection = [];
+
         for (var x = 0; x < numberOfCards; x++) {
 
             collection.push(new card(
@@ -39,6 +41,12 @@ var deck = (function(_) {
             ));
 
         }
+
+    }
+
+    function returnCollection() {
+
+        return collection;
 
     }
 
@@ -60,7 +68,7 @@ var deck = (function(_) {
     return {
         initialise: initialiseDeck,
         render: render,
-        raw: collection
+        raw: returnCollection
     }
 
 })(_);

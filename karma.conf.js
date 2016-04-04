@@ -16,7 +16,8 @@ module.exports = function(config) {
         files: [
             'bower_components/jquery/dist/jquery.slim.js',
             'bower_components/lodash/dist/lodash.js',
-            'tests/*.js'
+            'tests/*.js',
+            'app/resources/js/*.js'
         ],
 
 
@@ -29,7 +30,7 @@ module.exports = function(config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             'tests/*.js' : ['browserify'],
-            'app/resources/*.js': 'coverage'
+            'app/resources/js/*.js' : ['browserify', 'coverage']
         },
 
         browserify : {
@@ -43,10 +44,15 @@ module.exports = function(config) {
         reporters: ['progress', 'coverage'],
 
         coverageReporter: {
-            type : 'lcovonly',
-            file : './node_modules/coveralls/bin/coveralls.js'
+            // specify a common output directory
+            dir: 'tests/coverage',
+            reporters: [
+                // reporters not supporting the `file` property
+                { type: 'html', subdir: 'report-html' },
+                { type: 'lcov', subdir: 'report-lcov' },
+                //{ type: 'lcovonly', subdir: '.', file: '../../node_modules/coveralls/bin/coveralls.js' }
+            ]
         },
-
 
         // web server port
         port: 9876,

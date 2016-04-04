@@ -8,6 +8,6 @@ beforeEach(function () {
 
 it ("should initialise the deck with the given number of cards", function () {
 
-    expect(deck.raw.length === 10).toBe(true);
+    expect(deck.raw().length === 10).toBe(true);
 
 });
