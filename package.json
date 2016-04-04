@@ -19,7 +19,7 @@
     "watchify": "^3.7.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "karma start --single-run --browsers PhantomJS"
   },
   "author": "Matt Ormrod <matt@mattormrod.co.uk>",
   "license": "MIT"
