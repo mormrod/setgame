@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mormrod/setgame.svg?branch=master)](https://travis-ci.org/mormrod/setgame)
+
 [![Coverage Status](https://coveralls.io/repos/github/mormrod/setgame/badge.svg?branch=master)](https://coveralls.io/github/mormrod/setgame?branch=master)
 
 # Overview
