@@ -50,7 +50,7 @@ function clickCard(event) {
         $thisCard.addClass("selected");
 
         // Add the card to the hand
-        hand.add(deck.raw[index]);
+        hand.add(deck.raw()[index]);
 
         // If the hand has 3 cards in it then do this
         if (hand.raw().length === 3) {
