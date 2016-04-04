@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/mormrod/setgame.svg?branch=master)](https://travis-ci.org/mormrod/setgame)
+
+[![Coverage Status](https://coveralls.io/repos/github/mormrod/setgame/badge.svg?branch=master)](https://coveralls.io/github/mormrod/setgame?branch=master)
+
 # Overview
 SetGame is a simple Javascript representation of a similar card game called "Set".  I do not own the Copyright on the original and I just present this code purely for demonstration and non-profit purposes.  The aim is to make the code as light as possible using a combination of tools including Gulp, script concatenation, SASS, browserify, and Bower and NPM package managers.
 
