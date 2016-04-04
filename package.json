@@ -1,8 +1,7 @@
 {
-  "name": "set-game",
+  "name": "setgame",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "JavaScript and HTML game",
   "dependencies": {
     "font-awesome": "^4.5.0",
     "gulp": "^3.9.1",
