@@ -1,3 +1,5 @@
+env:
+- COVERALLS\_REPO\_TOKEN=j6liglMkg1uW9eYSowD49rCGfg8FTkBqg
 language: node_js
 node_js:
   - "5"
