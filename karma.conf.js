@@ -7,7 +7,6 @@ module.exports = function(config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['browserify', 'jasmine'],
@@ -29,7 +28,8 @@ module.exports = function(config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'tests/*.js' : ['browserify']
+            'tests/*.js' : ['browserify'],
+            'app/resources/*.js': 'coverage'
         },
 
         browserify : {
@@ -40,7 +40,12 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
+
+        coverageReporter: {
+            type : 'lcovonly',
+            file : './node_modules/coveralls/bin/coveralls.js'
+        },
 
 
         // web server port
