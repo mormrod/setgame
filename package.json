@@ -5,7 +5,7 @@
   "dependencies": {
     "font-awesome": "^4.5.0",
     "gulp": "^3.9.1",
-    "laravel-elixir": "^5.0.0",
+    "laravel-elixir": "^6.0.0-1",
     "laravel-elixir-browsersync2": "^0.1.0"
   },
   "devDependencies": {
