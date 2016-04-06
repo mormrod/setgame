@@ -5,8 +5,10 @@
   "dependencies": {
     "font-awesome": "^4.5.0",
     "gulp": "^3.9.1",
+    "jquery": "^2.2.3",
     "laravel-elixir": "^6.0.0-1",
-    "laravel-elixir-browsersync2": "^0.1.0"
+    "laravel-elixir-browsersync2": "^0.1.0",
+    "lodash": "^4.8.2"
   },
   "devDependencies": {
     "browserify": "^13.0.0",
@@ -28,5 +30,4 @@
   },
   "author": "Matt Ormrod <matt@mattormrod.co.uk>",
   "license": "MIT"
-
 }

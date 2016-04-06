@@ -14,8 +14,8 @@ var path = {
 
 // Add the vendor scripts in here, generally from bower_components or node_modules
 var vendorScripts = [
-    path.bower + 'jquery/dist/jquery.slim.js',
-    path.bower + 'lodash/dist/lodash.js'
+    //path.bower + 'jquery/dist/jquery.slim.js',
+    //path.bower + 'lodash/dist/lodash.js'
 ];
 
 // Main task

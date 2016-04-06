@@ -1,3 +1,7 @@
+// Load in the dependancy packages
+var $ = require('jquery');
+var _ = require('lodash');
+
 // Load in the models
 var deck = require('./models/deck');
 var hand = require('./models/hand');
