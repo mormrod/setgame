@@ -8,7 +8,8 @@
     "jquery": "^2.2.3",
     "laravel-elixir": "^6.0.0-1",
     "laravel-elixir-browsersync2": "^0.1.0",
-    "lodash": "^4.8.2"
+    "lodash": "^4.8.2",
+    "vue": "^1.0.21"
   },
   "devDependencies": {
     "browserify": "^13.0.0",

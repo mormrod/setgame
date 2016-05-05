@@ -1,6 +1,7 @@
 // Load in the dependancy packages
 var $ = require('jquery');
 var _ = require('lodash');
+require("vue");
 
 // Load in the models
 var deck = require('./models/deck');
