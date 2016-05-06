@@ -1,7 +1,6 @@
 // Load in the dependancy packages
-var $ = require('jquery');
 var _ = require('lodash');
-require("vue");
+var Vue = require("vue");
 
 // Load in the models
 var deck = require('./models/deck');
@@ -9,16 +8,50 @@ var hand = require('./models/hand');
 var error = require('./models/error');
 
 // Initialise variables
-var $body = $("body");
-var $mainContent = $("#mainContent");
-var $errors = $("#errors");
+//var $body = $("body");
+//var $mainContent = $("#mainContent");
+//var $errors = $("#errors");
+
+
 
 
 // Initialise the deck
 deck.initialise(30);
 
 // Render the deck
-deck.render($mainContent, $("#card"));
+//deck.render($mainContent, $("#card"));
+
+var myDeck = Vue.extend({
+    template: "#deckTemplate",
+    data: function () {
+        return {
+            title: "Deck",
+            deck: deck.raw()
+        }
+    }
+});
+
+Vue.component("my-deck", myDeck);
+
+var myHand = Vue.extend({
+    template: "#deckTemplate",
+    data: function () {
+        return {
+            title: "Hand",
+            deck: {}
+        }
+    }
+});
+
+Vue.component("my-hand", myHand);
+
+new Vue({
+    el: "body",
+    data: {
+        remaining: 30
+    }
+});
+
 
 /**
  *  If the errors change, then either display or hide them
@@ -79,7 +112,7 @@ function clickCard(event) {
 }
 
 // Event listener
-$body.on("click", ".card", clickCard);
+//$body.on("click", ".card", clickCard);
 
 
 

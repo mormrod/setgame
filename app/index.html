@@ -5,24 +5,33 @@
     <title>Set Game Demo</title>
     <link href="./css/main.css" rel="stylesheet">
 </head>
-<body>
-    <h2><span class="cards-remaining">30</span> Cards Remaining</h2>
-    <div id="mainContent">
 
+<body>
+    <h2><span class="cards-remaining">{{ remaining }}</span> Cards Remaining</h2>
+    <div id="mainContent">
+        <my-deck></my-deck>
     </div>
     <div id="errors"></div>
 </body>
-<script type="text/template" id="card">
-    <div class="card <%- card['colour']%> <%- card['shape']%>" data-id="<%- index %>">
-        <table>
-            <td>
-                <% for (var i = 0; i < card['number']; i++) { %>
-                <i class="fa fa-<%- card['shape']%><%- card['style']%>"></i>
-                <% } %>
-            </td>
-        </table>
-    </div>
-</script>
+
+<template id="deckTemplate">
+        <h2>{{ title }}</h2>
+        <div v-for="card in deck" class="card {{ card.colour }} {{ card.shape }}">
+            <table>
+                <td>
+                    <i v-for="shape in card.number" class="fa fa-{{ card.shape }} {{ card.style }}"></i>
+                </td>
+            </table>
+        </div>
+</template>
+
+
 <!--<script src="./js/vendor.js" type="text/javascript"></script>-->
 <script src="./js/app.js" type="text/javascript"></script>
+<script>
+
+
+
+</script>
+
 </html>
