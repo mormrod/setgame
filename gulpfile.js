@@ -37,7 +37,7 @@ elixir(function(mix) {
     mix.scripts(vendorScripts, path.destination + 'js/vendor.js');
 
     // Browserify the main js app
-    mix.browserify(path.js + 'app.js', path.destination + 'js/app.js');
+    mix.browserify(path.js + 'index.js', path.destination + 'js/index.js');
 
 
     // Browsersync the app

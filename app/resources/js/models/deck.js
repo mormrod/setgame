@@ -1,77 +1,104 @@
-// Load in the card model
-var card = require('./card');
+import React, {Component} from 'react';
+import Card from './card';
+import _ from 'lodash';
 
-// Load in the setup arrays
-var number = require('../arrays/number');
-var colour = require('../arrays/colour');
-var style = require('../arrays/style');
-var shape = require('../arrays/shape');
+const number = require('../arrays/number');
+const colour = require('../arrays/colour');
+const style = require('../arrays/style');
+const shape = require('../arrays/shape');
 
-
-var deck = (function(_) {
-
-    var collection = [];
+class Deck extends Component {
 
     /**
-     *  Return a random number, passing in the upper bound
+     *
+     * @param props
+     */
+    constructor(props) {
+
+        super(props);
+
+        this.state = {
+            numberOfCards : 30,
+            cards: [],
+            hand: props.hand,
+            setCardsRemaining: props.setCardsRemaining
+        };
+
+        this.buildDeck();
+        this.removeHandFromDeck = this.removeHandFromDeck.bind(this);
+
+    }
+
+    buildDeck() {
+        for (var x = 0; x < this.state.numberOfCards; x++) {
+            this.state.cards.push({
+                    id : x,
+                    number : number[this.returnRandom(number.length - 1)],
+                    colour : colour[this.returnRandom(colour.length - 1)],
+                    style : style[this.returnRandom(style.length - 1)],
+                    shape : shape[this.returnRandom(shape.length - 1)]
+                }
+            );
+        }
+    }
+
+    removeHandFromDeck(hand) {
+        _.remove(this.state.cards, (card) => {
+            for (var h = 0; h < hand.length; h ++) {
+                if (hand[h].props.id === card.id) {
+                    return true;
+                }
+            }
+        });
+
+        this.setState(this.state.cards);
+        this.state.setCardsRemaining(this.state.cards.length);
+    }
+
+    /**
+     *
+     * @returns {function(*)}
+     */
+    renderCards() {
+        return (
+            this.state.cards.map((card) => {
+                return (
+                    <Card
+                        id={card.id}
+                        key={card.id}
+                        number={card.number}
+                        colour={card.colour}
+                        style={card.style}
+                        shape={card.shape}
+                        hand={this.state.hand}
+                        removeHandFromDeck={this.removeHandFromDeck}
+                    />
+                );
+            })
+        );
+    }
+
+    /**
+     *
      * @param upper
-     * @returns {Number|number}
+     * @returns {number}
      */
-    function returnRandom(upper) {
-
+    returnRandom(upper) {
         return _.random(0, upper);
-
     }
 
     /**
-     *  Initialise the deck, passing in the number of cards to create
-     * @param numberOfCards
+     *
+     * @returns {XML}
      */
-    function initialiseDeck(numberOfCards) {
-
-        collection = [];
-
-        for (var x = 0; x < numberOfCards; x++) {
-
-            collection.push(new card(
-                number[returnRandom(number.length - 1)],
-                colour[returnRandom(colour.length - 1)],
-                style[returnRandom(style.length - 1)],
-                shape[returnRandom(shape.length - 1)]
-            ));
-
-        }
-
+    render() {
+        return (
+            <div>
+                { this.renderCards() }
+            </div>
+        );
     }
 
-    function returnCollection() {
+}
 
-        return collection;
-
-    }
-
-    /**
-     *  Render deck of cards
-     * @param $target
-     * @param $template
-     */
-    function render($target, $template) {
-
-        for (var card in collection) {
-
-            collection[card].render($target, $template, card);
-
-        }
-
-    }
-
-    return {
-        initialise: initialiseDeck,
-        render: render,
-        raw: returnCollection
-    }
-
-})(_);
-
-
-module.exports = deck;
+export default Deck;
