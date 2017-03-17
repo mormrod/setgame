@@ -18,6 +18,9 @@ class Card extends Component {
             style: props.style,
             selected: '',
             hand: props.hand,
+            selectCard: props.selectCard,
+            addCardToHand: props.addCardToHand,
+            removeCardFromHand: props.removeCardFromHand,
             removeHandFromDeck: props.removeHandFromDeck
         };
         this.cardIsClicked = this.cardIsClicked.bind(this);
@@ -45,17 +48,18 @@ class Card extends Component {
 
     addToHand() {
         this.setState({ selected : 'selected'});
-        this.state.hand.addCardToHand(this);
+        this.state.addCardToHand(this);
     }
 
     removeFromHand() {
-        this.state.hand.removeCardFromHand(this);
-        this.setState({ selected : ''});
+        this.setState({ selected : '' });
+        console.log(this.state);
+        this.state.removeCardFromHand(this);
     }
 
     render() {
         return (
-            <div key={this.state.id} onClick={this.cardIsClicked} className={`card ${this.state.colour} ${this.state.shape} ${this.state.selected}`}>
+            <div ref="cardEl" key={this.state.id} onClick={() => this.state.selectCard(this)} className={`card ${this.state.colour} ${this.state.shape} ${this.state.selected}`}>
                 <table>
                     <tbody>
                     <tr>

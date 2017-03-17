@@ -1,43 +1,15 @@
-import React, {Component} from 'react';
-import ReactDom from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-// Load in the models
-import Deck from './models/deck';
-import Hand from './models/hand';
-import CardsRemaining from './models/cards-remaining';
+import App from './containers/app';
+import reducers from './reducers';
 
-class App extends Component {
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-    /**
-     *
-     * @param props
-     */
-    constructor(props) {
-        super(props);
-        this.state = {
-            remaining: 30,
-            hand: new Hand()
-        };
-        this.setCardsRemaining = this.setCardsRemaining.bind(this);
-    }
-
-    setCardsRemaining(cardCount) {
-        this.setState({ remaining : cardCount });
-    }
-
-    /**
-     *
-     * @returns {XML}
-     */
-    render() {
-        return (
-            <div>
-                <h2><CardsRemaining remaining={this.state.remaining} /></h2>
-                <Deck hand={this.state.hand} setCardsRemaining={this.setCardsRemaining} />
-            </div>
-        );
-    }
-}
-
-ReactDom.render(<App />, document.querySelector(".container"));
-
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <App />
+    </Provider>
+    , document.querySelector('.container'));
